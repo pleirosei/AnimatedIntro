@@ -72,7 +72,7 @@ class HolderView: UIView {
     
     func drawBlueAnimatedRectangle() {
         layer.addSublayer(blueRactangleLayer)
-        blueRactangleLayer.animateStrokeWithColor(Colors.blue)
+        blueRactangleLayer.animateStrokeWithColor(Colors.green)
         NSTimer.scheduledTimerWithTimeInterval(0.40, target: self, selector: "drawArc", userInfo: nil, repeats: false)
     }
     
@@ -83,7 +83,7 @@ class HolderView: UIView {
     }
     
     func expandView() {
-        backgroundColor = Colors.blue
+        backgroundColor = Colors.green
         
         frame = CGRectMake(frame.origin.x - blueRactangleLayer.lineWidth, frame.origin.y - blueRactangleLayer.lineWidth, frame.size.width + blueRactangleLayer.lineWidth * 2, frame.size.height + blueRactangleLayer.lineWidth * 2)
         

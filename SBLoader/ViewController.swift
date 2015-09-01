@@ -39,7 +39,7 @@ class ViewController: UIViewController, HolderViewDelegate {
     
     func animateLabel() {
         holderView.removeFromSuperview()
-        view.backgroundColor = Colors.blue
+        view.backgroundColor = Colors.green
         
         let label: UILabel = UILabel(frame: view.frame)
         label.textColor = Colors.white

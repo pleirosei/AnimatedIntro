@@ -14,7 +14,7 @@ class ArcLayer: CAShapeLayer {
     
     override init() {
         super.init()
-        fillColor = Colors.blue.CGColor
+        fillColor = Colors.green.CGColor
         path = arcPathStarting.CGPath
     }
     
