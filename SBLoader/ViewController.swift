@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, HolderViewDelegate {
     
     var holderView = HolderView(frame: CGRectZero)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,7 +27,10 @@ class ViewController: UIViewController, HolderViewDelegate {
     
     func addHolderView() {
         let boxSize: CGFloat = 100.0
-        holderView.frame = CGRect(x: view.bounds.width / 2 - boxSize / 2, y: view.bounds.height / 2 - boxSize / 2, width: boxSize, height: boxSize)
+        holderView.frame = CGRect(x: view.bounds.width / 2 - boxSize / 2,
+            y: view.bounds.height / 2 - boxSize / 2,
+            width: boxSize,
+            height: boxSize)
         holderView.parentFrame = view.frame
         holderView.delegate = self
         view.addSubview(holderView)
@@ -38,7 +41,7 @@ class ViewController: UIViewController, HolderViewDelegate {
         holderView.removeFromSuperview()
         view.backgroundColor = Colors.blue
         
-        var label: UILabel = UILabel(frame: view.frame)
+        let label: UILabel = UILabel(frame: view.frame)
         label.textColor = Colors.white
         label.font = UIFont(name: "HelveticaNeue-Thin", size: 170.0)
         label.textAlignment = NSTextAlignment.Center
@@ -46,11 +49,11 @@ class ViewController: UIViewController, HolderViewDelegate {
         label.transform = CGAffineTransformScale(label.transform, 0.25, 0.25)
         view.addSubview(label)
         
-        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             label.transform = CGAffineTransformScale(label.transform, 4.0, 4.0)
-        }), completion: { finished in
-            self.addButton()
-        })
+            }) { (_) -> Void in
+                self.addButton()
+        }
     }
     
     func addButton() {
